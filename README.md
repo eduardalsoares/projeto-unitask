@@ -28,3 +28,23 @@ absorverem melhor o conteúdo.
 | Dashboard | Estatísticas de produtividade |
 
 ## 🗂️ Estrutura de Pastas
+
+projeto-unitask/
+│
+├── index.html         
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── assets/
+    ├── imgs/
+    └── icons/
+
+## 🛠️ Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript 
