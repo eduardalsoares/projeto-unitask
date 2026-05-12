@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniTask</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Unitask</h1>
+        <p>Organize suas atividades acadêmicas</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tarefa</h2>
+            <form id="form-tarefa">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" placeholder="Projetos | Estudos">
+                
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" placeholder="Lista de exercícios"></textarea>
+
+                <label for="prazo">Prazo</label>
+                <input type="date" id="prazo"
+
+                <label for="prioridade">Prioridade</label>
+                <select id="prioridade">
+                    <option value="">Selecione</option>
+                    <option value="">Baixa</option>
+                    <option value="">Média</option>
+                    <option value="">Alta</option>
+                </select>
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="afazer">A fazer</option>
+                    <option value="andamento">Em andamento</option>
+                    <option value="feito">Feito</option>
+                </select>
+                
+                <button type="submit">Adicionar tarefa</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Minhas Tarefas</h2>
+            <ul id="lista-tarefas">
+                
+            </ul>
+        </section>
+    </main>
+    <!--Adicionando o js externo-->
+    <script src="script.js"></script>
+</body>
+</html>
