@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: DM Sans, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #063A5D; /* background da página */
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card-login {
+  background: #F4F5F7;
+  border-radius: 16px;
+  padding: 42px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  h1 {
+    font-size: larger;
+    font-size: 2.4rem;
+    color: #063A5D;
+  }
+}
+
+.cabecalho img {
+  width: 40px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  color: #aaa;
+}
+
+.tab.ativo {
+  background: #FFD150;  /* sua cor de destaque */
+  color: #063A5D;
+  font-size: medium;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-login label {
+    font-size:medium;
+    color: #063A5D;
+}
+
+.form-login input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-login p {
+    font-size: small;
+    color: #063A5D;
+    cursor: pointer;
+}
+
+.form-login button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #063A5D;
+    color: #F4F5F7;
+    cursor: pointer;
+    font-size: medium;
+}
+
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#form-cadastro label {
+    font-size:medium;
+    color: #063A5D;
+}
+
+#form-cadastro input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-cadastro p {
+    font-size: small;
+    color: #063A5D;
+    cursor: pointer;
+}
+
+#form-cadastro button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #063A5D;
+    color: #F4F5F7;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.escondido {
+  display: none !important; /* Estava sobrepondo os outros seletores independente da ordem */
+}

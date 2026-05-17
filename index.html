@@ -3,36 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
     <title>Unitask</title>
-     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <main class="container">
         <section class="card-login">
-            <h1>Unistask</h1>
-            <p>Organize suas atividades acadêmicas</p>
+            <div class="cabecalho">
+                <img src="assets/icons/logo.svg" alt="Logo do Unitask"> 
+                <h1>Unitask</h1>
+            </div>
 
-            <form>
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" placeholder="Dgite seu nome">
+            <div class="tabs">
+                <button class="tab ativo" onclick="mostrarAba('entrar')"><strong>Entrar</strong></button>
+                <button class="tab" onclick="mostrarAba('cadastrar')"><strong>Cadastrar</strong></button>
+            </div>
 
+            <form id="form-login" class="form-login">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Digite seu email">
 
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" placeholder="Digite sua senha">
 
-                <button type="submit">Entrar</button>
-            </form>
-            <p class="text-cadastro">
-                Não tem uma conta? <a href="cadastro.html">Cadastre-se</a> 
-            </p>
-            <a href="perfil.html">Ir para perfil</a>
+                <button type="submit" id="btnEntrar">Entrar</button>
 
+                <p class="text-cadastro">Não tem conta? <a onclick="mostrarAba('cadastrar')"><strong>Cadastre-se</strong></a></p>
+            </form>
+
+            <form id="form-cadastro" class="form-cadastro escondido">
+                <label for="novo-nome">Nome</label>
+                <input type="text" id="nome-cadastro" placeholder="Digite seu nome">
+
+                <label for="curso">Curso</label>
+                <input type="text" id="curso-cadastro" placeholder="Digite seu curso">
+
+                <label for="novo-email">Email</label>
+                <input type="email" id="email-cadastro" placeholder="Digite seu email">
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha-cadastro" placeholder="Digite sua senha">
+
+                <button type="submit" id="btnEntrar">Cadastrar</button>
+
+                <p class="text-login">Já tem conta? <a onclick="mostrarAba('entrar')"><strong>Fazer login</strong></a></p>
+            </form>
+            
         </section>
     </main>
     <script src="js/script.js"></script>
+
 </body>
 </html>
 
