@@ -3,6 +3,7 @@
 // Muda da aba "Entrar" para "Cadastrar" e vice-versa
 const tabs = document.querySelectorAll('.tab');
 
+// 1. Troca a classe visual das abas ao clicar
 tabs.forEach(tab => {
   tab.addEventListener('click', function() {
     tabs.forEach(t => t.classList.remove('ativo')); // remove de todos
@@ -28,34 +29,31 @@ function mostrarAba(aba) {
 const formLogin = document.getElementById('form-login');
 const formCadastro = document.getElementById('form-cadastro');
 
+// No login 
+// 3. Ao submeter o login → salva email e redireciona
 formLogin.addEventListener('submit', (event) => {
-    event.preventDefault(); // Evita o envio do formulário vazio
+    event.preventDefault();
 
-    const emailDigitado = document.getElementById('email').value;
-
-    const dadosLogin = {
-        email: emailDigitado,
+    const usuario = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value
     };
 
-    localStorage.setItem('dadosLogin', JSON.stringify(dadosLogin)); // Armazena os dados de login no localStorage
-
-    window.location.href = './home.html'; // Redireciona para a página home
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+    window.location.href = './home.html';
 });
 
+// No cadastro
+// 4. Ao submeter o cadastro → salva nome/curso/email e redireciona
 formCadastro.addEventListener('submit', (event) => {
-    event.preventDefault(); // Evita o envio do formulário vazio
+    event.preventDefault();
 
-    const nomeCadastrado = document.getElementById('nome-cadastro').value;
-    const cursoCadastrado = document.getElementById('curso-cadastro').value;
-    const emailCadastrado = document.getElementById('email-cadastro').value;
-    
-    const dadosCadastro = {
-        nome: nomeCadastrado,
-        curso: cursoCadastrado,
-        email: emailCadastrado
-    };  
+    const usuario = {
+        nome: document.getElementById('nome-cadastro').value,
+        curso: document.getElementById('curso-cadastro').value,
+        email: document.getElementById('email-cadastro').value
+    };
 
-    localStorage.setItem('dadosCadastro', JSON.stringify(dadosCadastro)); // Armazena os dados de cadastro no localStorage
-
-    window.location.href = './home.html'; // Redireciona para a página home
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+    window.location.href = './home.html';
 });
