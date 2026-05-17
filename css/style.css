@@ -98,6 +98,11 @@ main {
     font-size: medium;
 }
 
+.form-login button a, .form-cadastro button a {
+    color: #F4F5F7;
+    text-decoration: none;
+}
+
 #form-cadastro {
     display: flex;
     flex-direction: column;
@@ -129,6 +134,7 @@ main {
     color: #F4F5F7;
     cursor: pointer;
     font-size: medium;
+    text-decoration: none;
 }
 
 .escondido {
