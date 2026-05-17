@@ -53,7 +53,7 @@ formCadastro.addEventListener('submit', (event) => {
         nome: nomeCadastrado,
         curso: cursoCadastrado,
         email: emailCadastrado
-    };
+    };  
 
     localStorage.setItem('dadosCadastro', JSON.stringify(dadosCadastro)); // Armazena os dados de cadastro no localStorage
 

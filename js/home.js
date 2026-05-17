@@ -1,0 +1,1 @@
+// Função para retornar o nome do usuário logado

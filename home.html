@@ -12,7 +12,54 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    
-    <script src="js/home.js"></script>
+  <div class="layout">
+
+    <aside id="menu-lateral">
+      <div class="menu-titulo">
+        <img src="assets/icons/logo.png" alt="Unitask Logo">
+        <h1>Unitask</h1>
+      </div>
+      <div class="menu-btn">
+        <button class="btn-hoje">Hoje</button>
+        <button class="btn-tarefas">Tarefas</button>
+        <button class="btn-calendario">Calendário</button>
+        <button class="btn-dashboard">Dashboard</button>
+        <button class="btn-perfil">Perfil</button>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <span>Hoje</span>
+        <div>
+          <button id="btnNovaTarefa" class="btn-nova-tarefa">Nova Tarefa</button>
+          <button id="btnSair">Sair</button>
+        </div>
+      </header>
+
+      <div class="texto-principal">
+        <h1>Olá, <span id="nomeUsuario">Usuário</span></h1>
+        <p id="homeData">data de hoje</p>
+      </div>
+
+      <div class="container-cards">
+        <div class="card">
+          <span id="qtdTarefas">0</span>
+          <p>Tarefas</p>
+        </div>
+        <div class="card">
+          <span id="qtdConcluidas">0</span>
+          <p>Concluídas</p>
+        </div>
+        <div class="card">
+          <span id="qtdPendentes">0</span>
+          <p>Pendentes</p>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/home.js"></script>
 </body>
 </html>
