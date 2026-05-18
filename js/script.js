@@ -54,6 +54,7 @@ formCadastro.addEventListener('submit', (event) => {
         email: document.getElementById('email-cadastro').value
     };
 
-    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+    localStorage.setItem('dadosCadastro', JSON.stringify(usuario)); // Salva os dados para reutilização
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuario)); // Salva os dados para exibição na tela inicial
     window.location.href = './home.html';
 });

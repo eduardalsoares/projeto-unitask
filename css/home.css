@@ -48,18 +48,19 @@ aside img {
 .menu-btn button {
     text-align: left;
     padding: 10px 12px;
-    border: 1px solid #ccc;
     border-radius: 6px;
-    background: transparent;
-    color: #063A5D;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     width: 100%;
+    background-color: #A8DBDE;
+    color: #063A5D;
+    border:none;
 }
 
 .menu-btn button:hover {
     background: #f0f0f0;
+    border:1px solid #063A5D;
 }
 
 /* MAIN — CONTEÚDO PRINCIPAL */
@@ -106,6 +107,11 @@ header button {
     background-color: #A8DBDE;
     color: #063A5D;
     border:none;
+}
+
+.btn-nova-tarefa button:hover {
+    background: #f0f0f0;
+    border:1px solid #063A5D;
 }
 
 /* TEXTO PRINCIPAL */

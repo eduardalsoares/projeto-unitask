@@ -9,3 +9,8 @@ document.getElementById('homeData').textContent = new Date().toLocaleDateString(
     month: 'long',
     year: 'numeric'
 });
+
+document.getElementById('btnSair').addEventListener('click', () => {
+    localStorage.removeItem('usuarioLogado'); // apaga só a sessão
+    window.location.href = './index.html';    // dadosCadastro continua salvo
+});
