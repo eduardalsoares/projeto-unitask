@@ -12,6 +12,21 @@ form.addEventListener('submit', function(evento) {
     const prazo = document.getElementById('prazo').value;
     const prioridade = document.getElementById('prioridade').value;
     const status = document.getElementById('status').value;
+ 
+    // 4. Salvar as tarefas no navegador
+    const tarefa = {
+        titulo,
+        descricao,
+        prazo,
+        prioridade,
+        status
+    };
+
+    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+
+    tarefas.push(tarefa);
+
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
 
     // 4. Criar o elemento de lista (LI) que vai entrar na tela
     const novaTarefa = document.createElement('li');
