@@ -3,60 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniTask</title>
+    <title>UniTask | Tarefas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../assets/icons/logo.svg">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/tarefas.css">
 </head>
 <body>
-    <header>
-        <h1>Unitask</h1>
-        <p>Organize suas atividades acadêmicas</p>
-    </header>
 
-    <main>
-        <section>
-            <h2>Tarefa</h2>
-            <form id="form-tarefa">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" placeholder="Projetos | Estudos">
+    <div class="layout">
+
+        <aside id="menu-lateral">
+            <div class="menu-titulo">
+                <img src="../assets/icons/logo.png" alt="Unitask Logo">
+                <h1>Unitask</h1>
+            </div>
+            <div class="menu-btn">
+                <button class="btn-hoje">Hoje</button>
+                <button class="btn-tarefas active">Tarefas</button> <button class="btn-calendario">Calendário</button>
+                <button class="btn-dashboard">Dashboard</button>
+                <button class="btn-perfil">Perfil</button>
+            </div>
+        </aside>
+        
+        <main>
+            <header class="topo-sistema">
+                <span>Hoje</span>
+                <div>
+                    <button id="btnNovaTarefa" class="btn-nova-tarefa">Nova Tarefa</button>
+                    <button id="btnSair">Sair</button>
+                </div>
+            </header>
+
+            <div class="conteudo-principal">
                 
-                <label for="descricao">Descrição:</label>
-                <textarea id="descricao" placeholder="Lista de exercícios"></textarea>
+                <section class="introducao-pagina">
+                    <h1>Cadastre suas tarefas</h1>
+                    <p>Organize suas atividades acadêmicas</p>
+                </section>
 
-                <label for="prazo">Prazo</label>
-                <input type="date" id="prazo">
+                <div class="grid-tarefas">
+                    <section class="card-painel">
+                        <h2>Nova Tarefa</h2>
+                        <form id="form-tarefa">
+                            <label for="titulo">Título</label>
+                            <input type="text" id="titulo" placeholder="Projetos | Estudos">
+                            
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" placeholder="Lista de exercícios"></textarea>
 
-                <label for="prioridade">Prioridade</label>
-                <select id="prioridade">
-                    <option value="">Selecione</option>
-                    <option value="baixa">Baixa</option>
-                    <option value="media">Média</option>
-                    <option value="alta">Alta</option>
-                </select>
+                            <div class="campos-alinhados">
+                                <div>
+                                    <label for="prazo">Prazo</label>
+                                    <input type="date" id="prazo">
+                                </div>
+                                <div>
+                                    <label for="prioridade">Prioridade</label>
+                                    <select id="prioridade">
+                                        <option value="">Selecione</option>
+                                        <option value="baixa">Baixa</option>
+                                        <option value="media">Média</option>
+                                        <option value="alta">Alta</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                <label for="status">Status</label>
-                <select id="status">
-                    <option value="afazer">A fazer</option>
-                    <option value="andamento">Em andamento</option>
-                    <option value="feito">Feito</option>
-                </select>
-                
-                <button type="submit">Adicionar tarefa</button>
-            </form>
-        </section>
+                            <label for="status">Status</label>
+                            <select id="status">
+                                <option value="afazer">A fazer</option>
+                                <option value="andamento">Em andamento</option>
+                                <option value="feito">Feito</option>
+                            </select>
+                            
+                            <button type="submit" class="btn-enviar">Adicionar tarefa</button>
+                        </form>
+                    </section>
 
-        <section>
-            <h2>Minhas Tarefas</h2>
-            <ul id="lista-tarefas">
-                
-            </ul>
-        </section>
-    </main>
-    
+                    <section class="card-painel">
+                        <h2>Minhas Tarefas</h2>
+                        <ul id="lista-tarefas">
+                            </ul>
+                    </section>
+                </div>
+
+            </div> 
+        </main>
+
+    </div>
+
     <script src="../js/script.js"></script>
     <script src="../js/tarefas.js"></script>
 </body>

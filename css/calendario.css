@@ -1,40 +1,32 @@
 body {
-    background-color: #0c111d;
+    background-color: #F4F5F7;
     color: #f6f8fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px;
+    margin: 0;
 }
 
-header {
+.conteudo {
+    flex: 1;
+    padding: 30px;
+}
+
+.conteudo h1 {
     text-align: center;
-    margin-bottom: 20px;
+    color: #063A5D;
+    margin-bottom: 10px;
 }
 
-header h1 {
-    color: white;
-    font-size: 30px;
-   
-}
-
-h1{
+.conteudo p {
     text-align: center;
-
-}
-
-p{
-    text-align: center;
+    color: #063A5D;
+    margin-bottom: 30px;
     font-size: 16px;
 }
 
-header p {
-    color: #94a3b8;
-    
-    
-}
-
 #calendar {
+    width: 100%;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 0 auto;
     background-color: #161e2e;
     padding: 20px;
     border-radius: 12px;
@@ -87,4 +79,112 @@ header p {
     padding: 2px 4px;
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+aside {
+    width: 220px;
+    background-color: #F4F5F7;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.menu-titulo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-align: left;
+    padding: 0 8px;
+}
+
+.menu-titulo h1 {
+    font-size: 2rem;
+    color: #063A5D;
+}
+
+aside img {
+    width: 28px;
+}
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-btn button {
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    background-color: #A8DBDE;
+    color: #063A5D;
+    border:none;
+}
+
+.menu-btn button:hover {
+    background: #f0f0f0;
+    border:1px solid #063A5D;
+}
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow-y: auto;
+}
+
+header {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    background-color: #063A5D;
+    border-bottom: 4px solid #FFD150;
+}
+
+header span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #F4F5F7;
+}
+
+header div {
+    display: flex;
+    gap: 10px;
+}
+
+header button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #063A5D;
+    width: 8rem;
+}
+
+.btn-nova-tarefa {
+    background-color: #A8DBDE;
+    color: #063A5D;
+    border:none;
+}
+
+.btn-nova-tarefa button:hover {
+    background: #f0f0f0;
+    border:1px solid #063A5D;
 }

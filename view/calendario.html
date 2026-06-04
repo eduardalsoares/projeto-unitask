@@ -12,10 +12,40 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Calendário de Atividades</h1>
-    <p>Visualize suas atividades</p>
+    <div class="layout">
 
-    <div id="calendar"></div>
+        <aside id="menu-lateral">
+            <div class="menu-titulo">
+                <img src="../assets/icons/logo.png" alt="Unitask Logo">
+                <h1>Unitask</h1>
+            </div>
+            <div class="menu-btn">
+                <button class="btn-hoje">Hoje</button>
+                <button class="btn-tarefas">Tarefas</button>
+                <button class="btn-calendario">Calendário</button>
+                <button class="btn-dashboard">Dashboard</button>
+                <button class="btn-perfil">Perfil</button>
+            </div>
+        </aside>
+       
+
+    
+        <main>
+        <header>
+            <span>Hoje</span>
+            <div>
+            <button id="btnNovaTarefa" class="btn-nova-tarefa">Nova Tarefa</button>
+            <button id="btnSair">Sair</button>
+            </div>
+        </header>
+        
+        <div class="conteudo">
+            <h1>Calendário de Atividades</h1>
+            <p>Visualize suas atividades</p>
+        </div>
+        <div id="calendar"></div>
+        </main>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 

@@ -1,3 +1,6 @@
+/* =========================
+   RESET GLOBAL
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,107 +9,249 @@
 }
 
 body {
-    background-color: #0c111d; 
-    color: #f6f8fa;            
+    background-color:#F4F5F7;
+    color: #063A5D;
     min-height: 100vh;
-    padding: 40px 20px;
 }
 
-
-header {
-    text-align: center;
-    margin-bottom: 40px;
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+.layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 8px;
+/* =========================
+   SIDEBAR
+========================= */
+aside {
+    width: 220px;
+    background-color: #F4F5F7;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 24px;
+    flex-shrink: 0;
 }
 
-header p {
-    color: #94a3b8; 
-    font-size: 16px;
+.menu-titulo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 8px;
 }
 
+.menu-titulo h1 {
+    font-size: 2rem;
+    color: #063A5D;
+}
+
+aside img {
+    width: 28px;
+}
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-btn button {
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    background-color: #A8DBDE;
+    color: #063A5D;
+    border: none;
+    transition: 0.2s;
+}
+
+.menu-btn button:hover {
+    background: #f0f0f0;
+    border: 1px solid #063A5D;
+}
+
+/* =========================
+   MAIN
+========================= */
 main {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr; 
-    gap: 30px; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    min-width: 0;
 }
 
-section {
-    background-color: #161e2e; 
-    border: 1px solid #243249;  
-    border-radius: 12px;       
+/* =========================
+   HEADER TOPO
+========================= */
+.topo-sistema {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    background-color: #063A5D;
+    border-bottom: 4px solid #FFD150;
+}
+
+.topo-sistema span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #F4F5F7;
+}
+
+.topo-sistema div {
+    display: flex;
+    gap: 10px;
+}
+
+.topo-sistema button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    width: 8rem;
+}
+
+/* botão nova tarefa */
+.btn-nova-tarefa {
+    background-color: #A8DBDE;
+    color: #063A5D;
+    border: none;
+    transition: 0.2s;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+.conteudo-principal {
     padding: 24px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
-section h2 {
+/* introdução */
+.introducao-pagina {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.introducao-pagina h1 {
+    font-size: 2.5rem;
+}
+
+.introducao-pagina p {
+    color: #94a3b8;
+}
+
+/* =========================
+   GRID DE TAREFAS
+========================= */
+.grid-tarefas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    color: white;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card-painel {
+    background-color: #161e2e;
+    border: 1px solid #243249;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
+}
+
+.card-painel h2 {
     font-size: 1.4rem;
-    color: #ffffff;
     margin-bottom: 20px;
     border-bottom: 2px solid #243249;
     padding-bottom: 10px;
 }
 
+/* =========================
+   FORMULÁRIO
+========================= */
 #form-tarefa {
     display: flex;
-    flex-direction: column; 
-    gap: 16px; 
+    flex-direction: column;
+    gap: 16px;
 }
 
 label {
     font-size: 0.9rem;
     font-weight: 600;
     color: #94a3b8;
-    margin-bottom: -8px; 
 }
 
-input[type="text"],
-input[type="date"],
+input,
 textarea,
 select {
     width: 100%;
     padding: 10px 14px;
-    background-color: #0c111d; 
+    background-color: #0c111d;
     border: 1px solid #334155;
     border-radius: 6px;
     color: #ffffff;
-    font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.2s;
+    transition: 0.2s;
 }
 
-input:focus, textarea:focus, select:focus {
-    border-color: #38bdf8; 
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #38bdf8;
 }
 
 textarea {
-    resize: vertical;
     min-height: 80px;
+    resize: vertical;
 }
 
+.campos-alinhados {
+    display: flex;
+    gap: 12px;
+}
+
+.campos-alinhados > div {
+    flex: 1;
+}
+
+/* =========================
+   BOTÃO FORM
+========================= */
 button[type="submit"] {
-    background-color: #2563eb; 
-    color: #ffffff;
+    background-color: #2563eb;
+    color: #fff;
     border: none;
     padding: 12px;
     border-radius: 6px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: 0.2s;
     margin-top: 10px;
 }
 
 button[type="submit"]:hover {
-    background-color: #1d4ed8; 
+    background-color: #1d4ed8;
 }
 
+/* =========================
+   LISTA DE TAREFAS
+========================= */
 #lista-tarefas {
     list-style: none;
     display: flex;
@@ -121,5 +266,5 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid #38bdf8; 
+    border-left: 4px solid #38bdf8;
 }
