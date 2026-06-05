@@ -1,3 +1,6 @@
+/* =========================
+   RESET GLOBAL
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,15 +11,21 @@
 body {
     background-color: #F4F5F7;
     color: #063A5D;
-    font-family: DM Sans, sans-serif;
-    margin: 0;
+    min-height: 100vh;
 }
 
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
 .layout {
     display: flex;
     height: 100vh;
+    overflow: hidden;
 }
 
+/* =========================
+   SIDEBAR
+========================= */
 aside {
     width: 220px;
     background-color: #F4F5F7;
@@ -32,7 +41,6 @@ aside {
     display: flex;
     align-items: center;
     gap: 6px;
-    text-align: left;
     padding: 0 8px;
 }
 
@@ -70,17 +78,22 @@ aside img {
     color: #F4F5F7;
 }
 
+/* =========================
+   MAIN
+========================= */
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 0;
     overflow-y: auto;
+    min-width: 0;
 }
 
-header {
+/* =========================
+   HEADER TOPO
+========================= */
+.topo-sistema {
     width: 100%;
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,31 +102,31 @@ header {
     border-bottom: 3px solid #A8DBDE;
 }
 
-header span {
+.topo-sistema span {
     font-size: 1.2rem;
     font-weight: 600;
     color: #F4F5F7;
 }
 
-header div {
+.topo-sistema div {
     display: flex;
     gap: 10px;
 }
 
-header button {
+.topo-sistema button {
     padding: 8px 16px;
     border-radius: 6px;
     border: 1px solid #A8DBDE;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    color: #063A5D;
     width: 8rem;
     background-color: #F4F5F7;
+    color: #063A5D;
     transition: 0.2s;
 }
 
-header button:hover {
+.topo-sistema button:hover {
     background-color: #e0eeef;
 }
 
@@ -127,85 +140,87 @@ header button:hover {
     background-color: #8ecdd1 !important;
 }
 
-.conteudo {
-    flex: 1;
-    padding: 30px;
+.introducao-pagina {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.conteudo h1 {
+.introducao-pagina h1 {
     font-size: 2rem;
-    text-align: center;
     color: #063A5D;
-    margin-bottom: 10px;
 }
 
-.conteudo p {
-    text-align: center;
+.introducao-pagina p {
     color: #7a9ab0;
-    margin-bottom: 30px;
-    font-size: 16px;
 }
 
-#calendar {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+.conteudo-principal {
+    padding: 24px;
+}
+
+/* =========================
+   CARDS DE RESUMO
+========================= */
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
     border: 1px solid #c5dfe1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
     box-shadow: 0 2px 8px rgba(6, 58, 93, 0.08);
 }
 
-.fc {
+.card span {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #063A5D;
 }
 
-.fc-toolbar-title {
-    color: #063A5D;
-    font-size: 1.8rem;
+.card p {
+    font-size: 0.9rem;
+    color: #7a9ab0;
+    margin-top: 4px;
 }
 
-.fc-button {
-    background-color: #063A5D !important;
-    border: none !important;
-    color: #F4F5F7 !important;
-    transition: 0.2s !important;
+/* =========================
+   GRID DOS GRÁFICOS
+========================= */
+.grid-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
-.fc-button:hover {
-    background-color: #0a5080 !important;
-}
-
-.fc-button-active {
-    background-color: #A8DBDE !important;
-    color: #063A5D !important;
-}
-
-.fc-col-header-cell {
-    background-color: #A8DBDE;
-    color: #063A5D;
-    padding: 10px 0;
-}
-
-.fc-daygrid-day {
+.card-painel {
     background-color: #ffffff;
+    border: 1px solid #c5dfe1;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(6, 58, 93, 0.08);
 }
 
-.fc-daygrid-day:hover {
-    background-color: #e8f4f5;
+.card-painel h2 {
+    font-size: 1.1rem;
+    color: #063A5D;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #A8DBDE;
+    padding-bottom: 10px;
 }
 
-.fc-day-today {
-    background-color: rgba(168, 219, 222, 0.2) !important;
-}
-
-.fc-event {
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 2px 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    background-color: #063A5D !important;
-    color: #F4F5F7 !important;
+.grafico-container {
+    position: relative;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
