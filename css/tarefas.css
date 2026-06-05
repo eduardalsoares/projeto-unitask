@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: DM Sans, sans-serif;
 }
 
 body {
-    background-color:#F4F5F7;
+    background-color: #F4F5F7;
     color: #063A5D;
     min-height: 100vh;
 }
@@ -20,7 +20,7 @@ body {
 aside {
     width: 220px;
     background-color: #F4F5F7;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #c5dfe1;
     display: flex;
     flex-direction: column;
     padding: 24px 16px;
@@ -65,8 +65,8 @@ aside img {
 }
 
 .menu-btn button:hover {
-    background: #f0f0f0;
-    border: 1px solid #063A5D;
+    background-color: #063A5D;
+    color: #F4F5F7;
 }
 
 main {
@@ -84,7 +84,7 @@ main {
     justify-content: space-between;
     padding: 16px 28px;
     background-color: #063A5D;
-    border-bottom: 4px solid #FFD150;
+    border-bottom: 3px solid #A8DBDE;
 }
 
 .topo-sistema span {
@@ -101,25 +101,34 @@ main {
 .topo-sistema button {
     padding: 8px 16px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #A8DBDE;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     width: 8rem;
+    background-color: #F4F5F7;
+    color: #063A5D;
+    transition: 0.2s;
+}
+
+.topo-sistema button:hover {
+    background-color: #e0eeef;
 }
 
 .btn-nova-tarefa {
     background-color: #A8DBDE;
     color: #063A5D;
     border: none;
-    transition: 0.2s;
 }
 
+.btn-nova-tarefa:hover {
+    background-color: #8ecdd1 !important;
+}
 
 .conteudo-principal {
     padding: 24px;
+    background-color: #F4F5F7;
 }
-
 
 .introducao-pagina {
     margin-bottom: 20px;
@@ -128,31 +137,33 @@ main {
 
 .introducao-pagina h1 {
     font-size: 2.5rem;
+    color: #063A5D;
 }
 
 .introducao-pagina p {
-    color: #94a3b8;
+    color: #7a9ab0;
 }
 
 .grid-tarefas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    color: white;
 }
 
 .card-painel {
-    background-color: #161e2e;
-    border: 1px solid #243249;
+    background-color: #ffffff;
+    border: 1px solid #c5dfe1;
     border-radius: 12px;
     padding: 24px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 8px rgba(6, 58, 93, 0.08);
+    color: #063A5D;
 }
 
 .card-painel h2 {
     font-size: 1.4rem;
+    color: #063A5D;
     margin-bottom: 20px;
-    border-bottom: 2px solid #243249;
+    border-bottom: 2px solid #A8DBDE;
     padding-bottom: 10px;
 }
 
@@ -165,7 +176,7 @@ main {
 label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #063A5D;
 }
 
 input,
@@ -173,10 +184,10 @@ textarea,
 select {
     width: 100%;
     padding: 10px 14px;
-    background-color: #0c111d;
-    border: 1px solid #334155;
+    background-color: #F4F5F7;
+    border: 1px solid #A8DBDE;
     border-radius: 6px;
-    color: #ffffff;
+    color: #063A5D;
     outline: none;
     transition: 0.2s;
 }
@@ -184,7 +195,8 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: #38bdf8;
+    border-color: #063A5D;
+    background-color: #ffffff;
 }
 
 textarea {
@@ -202,8 +214,8 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #2563eb;
-    color: #fff;
+    background-color: #063A5D;
+    color: #F4F5F7;
     border: none;
     padding: 12px;
     border-radius: 6px;
@@ -215,7 +227,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #1d4ed8;
+    background-color: #0a5080;
 }
 
 #lista-tarefas {
@@ -226,11 +238,18 @@ button[type="submit"]:hover {
 }
 
 .task-item {
-    background-color: #1f2a3c;
+    background-color: #F4F5F7;
     padding: 14px;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid #38bdf8;
+    border-left: 4px solid #A8DBDE;
+    color: #063A5D;
+    transition: 0.2s;
+}
+
+.task-item:hover {
+    border-left-color: #063A5D;
+    background-color: #e8f4f5;
 }

@@ -34,3 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+document.getElementById('btnHoje').addEventListener('click', () => {
+    window.location.href = './home.html';
+});
+
+document.getElementById('btnTarefas').addEventListener('click', () => {
+    window.location.href = './tarefas.html';
+})
+
+document.getElementById('btnNovaTarefa').addEventListener('click', () => {
+    window.location.href = './tarefas.html';
+})
+

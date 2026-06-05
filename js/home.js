@@ -14,3 +14,15 @@ document.getElementById('btnSair').addEventListener('click', () => {
     localStorage.removeItem('usuarioLogado'); // apaga só a sessão
     window.location.href = './index.html';    // dadosCadastro continua salvo
 });
+
+document.getElementById('btnTarefas').addEventListener('click', () => {
+    window.location.href = './tarefas.html';
+})
+
+document.getElementById('btnNovaTarefa').addEventListener('click', () => {
+    window.location.href = './tarefas.html';
+})
+
+document.getElementById('btnCalendario').addEventListener('click', () => {
+    window.location.href = './calendario.html';
+})
