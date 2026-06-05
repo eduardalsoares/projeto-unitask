@@ -16,13 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('qtdPendentes').textContent = qtdPendentes;
     document.getElementById('qtdAndamento').textContent = qtdAndamento;
 
-    // usa o id dos elementos para adicionar aos cards
-
-    document.getElementById('qtdTotal').textContent = qtdTotal;
-    document.getElementById('qtdConcluidas').textContent = qtdConcluidas;
-    document.getElementById('qtdPendentes').textContent = qtdPendentes;
-    document.getElementById('qtdAndamento').textContent = qtdAndamento;
-
 });
 
 // Função para retornar o nome do usuário logado
