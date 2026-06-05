@@ -55,3 +55,11 @@ form.addEventListener('submit', function(evento) {
     // 7. Limpar o formulário para o usuário poder digitar a próxima
     form.reset();
 });
+
+document.getElementById('btnHoje').addEventListener('click', () => {
+    window.location.href = './home.html';
+});
+
+document.getElementById('btnCalendario').addEventListener('click', () => {
+    window.location.href = './calendario.html';
+})
