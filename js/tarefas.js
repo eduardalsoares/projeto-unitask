@@ -15,6 +15,7 @@ form.addEventListener('submit', function(evento) {
  
     // 4. Salvar as tarefas no navegador - localStorage
     const tarefa = {
+        id: Date.now(),
         titulo,
         descricao,
         prazo,
