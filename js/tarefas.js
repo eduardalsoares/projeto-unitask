@@ -56,10 +56,24 @@ form.addEventListener('submit', function(evento) {
     form.reset();
 });
 
+document.getElementById('btnSair').addEventListener('click', () => {
+    localStorage.removeItem('usuarioLogado'); // apaga só a sessão
+    window.location.href = './index.html';    // dadosCadastro continua salvo
+});
+
+// Navegação entre páginas
 document.getElementById('btnHoje').addEventListener('click', () => {
     window.location.href = './home.html';
 });
 
 document.getElementById('btnCalendario').addEventListener('click', () => {
     window.location.href = './calendario.html';
+})
+
+document.getElementById('btnHoje').addEventListener('click', () => {
+    window.location.href = './home.html';
+});
+
+document.getElementById('btnDashboard').addEventListener('click', () => {
+    window.location.href = './dashboard.html';
 })

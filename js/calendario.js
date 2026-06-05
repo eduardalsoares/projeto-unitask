@@ -34,6 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+document.getElementById('btnSair').addEventListener('click', () => {
+    localStorage.removeItem('usuarioLogado'); // apaga só a sessão
+    window.location.href = './index.html';    // dadosCadastro continua salvo
+});
+
+// Navegação entre páginas
+
 document.getElementById('btnHoje').addEventListener('click', () => {
     window.location.href = './home.html';
 });
@@ -44,5 +51,13 @@ document.getElementById('btnTarefas').addEventListener('click', () => {
 
 document.getElementById('btnNovaTarefa').addEventListener('click', () => {
     window.location.href = './tarefas.html';
+})
+
+document.getElementById('btnHoje').addEventListener('click', () => {
+    window.location.href = './home.html';
+});
+
+document.getElementById('btnDashboard').addEventListener('click', () => {
+    window.location.href = './dashboard.html';
 })
 
