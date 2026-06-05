@@ -40,11 +40,11 @@ form.addEventListener('submit', function(evento) {
     // 5. Montar o HTML interno da nossa tarefa
     novaTarefa.innerHTML = `
         <div style="display: flex; flex-direction: column; gap: 4px;">
-            <strong style="color: #ffffff;">${titulo}</strong>
-            <small style="color: #94a3b8;">${descricao}</small>
-            <span style="font-size: 0.8rem; color: #64748b;">📅 Prazo: ${prazo}</span>
+            <strong style="color: #063A5D;">${titulo}</strong>
+            <small style="color: #4a7a8a;">${descricao}</small>
+            <span style="font-size: 0.8rem; color: #4a7a8a;">📅 Prazo: ${prazo}</span>
         </div>
-        <span class="badge" style="padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; background: #243249;">
+        <span class="badge" style="padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; background: #A8DBDE; color: #063A5D;">
             ${status.toUpperCase()}
         </span>
     `;

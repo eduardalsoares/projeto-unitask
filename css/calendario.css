@@ -1,84 +1,8 @@
 body {
     background-color: #F4F5F7;
-    color: #f6f8fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #063A5D;
+    font-family: DM Sans, sans-serif;
     margin: 0;
-}
-
-.conteudo {
-    flex: 1;
-    padding: 30px;
-}
-
-.conteudo h1 {
-    text-align: center;
-    color: #063A5D;
-    margin-bottom: 10px;
-}
-
-.conteudo p {
-    text-align: center;
-    color: #063A5D;
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-
-#calendar {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #161e2e;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #243249;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-}
-
-.fc {
-    color: #f6f8fa;
-}
-
-.fc-toolbar-title {
-    color: white;
-    font-size: 1.8rem;
-}
-
-.fc-button {
-    background-color: #2563eb !important;
-    border: none !important;
-}
-
-.fc-button:hover {
-    background-color: #1d4ed8 !important;
-}
-
-.fc-button-active {
-    background-color: #1e40af !important;
-}
-
-.fc-col-header-cell {
-    background-color: #1f2a3c;
-    padding: 10px 0;
-}
-
-.fc-daygrid-day {
-    background-color: #161e2e;
-}
-
-.fc-daygrid-day:hover {
-    background-color: #1f2a3c;
-}
-
-.fc-day-today {
-    background-color: rgba(37, 99, 235, 0.15) !important;
-}
-
-.fc-event {
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 2px 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
 }
 
 .layout {
@@ -89,7 +13,7 @@ body {
 aside {
     width: 220px;
     background-color: #F4F5F7;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #c5dfe1;
     display: flex;
     flex-direction: column;
     padding: 24px 16px;
@@ -130,14 +54,16 @@ aside img {
     width: 100%;
     background-color: #A8DBDE;
     color: #063A5D;
-    border:none;
+    border: none;
+    transition: 0.2s;
 }
 
 .menu-btn button:hover {
-    background: #f0f0f0;
-    border:1px solid #063A5D;
+    background-color: #063A5D;
+    color: #F4F5F7;
 }
-main{
+
+main {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -153,7 +79,7 @@ header {
     justify-content: space-between;
     padding: 16px 28px;
     background-color: #063A5D;
-    border-bottom: 4px solid #FFD150;
+    border-bottom: 3px solid #A8DBDE;
 }
 
 header span {
@@ -170,21 +96,108 @@ header div {
 header button {
     padding: 8px 16px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #A8DBDE;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     color: #063A5D;
     width: 8rem;
+    background-color: #F4F5F7;
+    transition: 0.2s;
+}
+
+header button:hover {
+    background-color: #e0eeef;
 }
 
 .btn-nova-tarefa {
     background-color: #A8DBDE;
     color: #063A5D;
-    border:none;
+    border: none;
 }
 
-.btn-nova-tarefa button:hover {
-    background: #f0f0f0;
-    border:1px solid #063A5D;
+.btn-nova-tarefa:hover {
+    background-color: #8ecdd1 !important;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 30px;
+}
+
+.conteudo h1 {
+    text-align: center;
+    color: #063A5D;
+    margin-bottom: 10px;
+}
+
+.conteudo p {
+    text-align: center;
+    color: #7a9ab0;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+#calendar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #c5dfe1;
+    box-shadow: 0 2px 8px rgba(6, 58, 93, 0.08);
+}
+
+.fc {
+    color: #063A5D;
+}
+
+.fc-toolbar-title {
+    color: #063A5D;
+    font-size: 1.8rem;
+}
+
+.fc-button {
+    background-color: #063A5D !important;
+    border: none !important;
+    color: #F4F5F7 !important;
+    transition: 0.2s !important;
+}
+
+.fc-button:hover {
+    background-color: #0a5080 !important;
+}
+
+.fc-button-active {
+    background-color: #A8DBDE !important;
+    color: #063A5D !important;
+}
+
+.fc-col-header-cell {
+    background-color: #A8DBDE;
+    color: #063A5D;
+    padding: 10px 0;
+}
+
+.fc-daygrid-day {
+    background-color: #ffffff;
+}
+
+.fc-daygrid-day:hover {
+    background-color: #e8f4f5;
+}
+
+.fc-day-today {
+    background-color: rgba(168, 219, 222, 0.2) !important;
+}
+
+.fc-event {
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 2px 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #063A5D !important;
+    color: #F4F5F7 !important;
 }
