@@ -1,3 +1,30 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // leitura das tarefas salvas no localStorage
+    const tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+
+    // contagem de cada categoria 
+
+    const qtdTotal = tarefas.length;
+    const qtdConcluidas = tarefas.filter(t => t.status === 'feito').length;
+    const qtdPendentes = tarefas.filter(t => t.status === 'afazer').length;
+    const qtdAndamento = tarefas.filter(t => t.status === 'andamento').length;
+
+    // usa o id dos elementos para adicionar aos cards
+
+    document.getElementById('qtdTotal').textContent = qtdTotal;
+    document.getElementById('qtdConcluidas').textContent = qtdConcluidas;
+    document.getElementById('qtdPendentes').textContent = qtdPendentes;
+    document.getElementById('qtdAndamento').textContent = qtdAndamento;
+
+    // usa o id dos elementos para adicionar aos cards
+
+    document.getElementById('qtdTotal').textContent = qtdTotal;
+    document.getElementById('qtdConcluidas').textContent = qtdConcluidas;
+    document.getElementById('qtdPendentes').textContent = qtdPendentes;
+    document.getElementById('qtdAndamento').textContent = qtdAndamento;
+
+});
+
 // Função para retornar o nome do usuário logado
 
 const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));

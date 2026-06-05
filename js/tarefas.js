@@ -13,7 +13,7 @@ form.addEventListener('submit', function(evento) {
     const prioridade = document.getElementById('prioridade').value;
     const status = document.getElementById('status').value;
  
-    // 4. Salvar as tarefas no navegador
+    // 4. Salvar as tarefas no navegador - localStorage
     const tarefa = {
         titulo,
         descricao,
