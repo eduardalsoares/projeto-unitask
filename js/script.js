@@ -7,7 +7,7 @@ const tabs = document.querySelectorAll('.tab');
 tabs.forEach(tab => {
   tab.addEventListener('click', function() {
     tabs.forEach(t => t.classList.remove('ativo')); // remove de todos
-    this.classList.add('ativo');                     // adiciona só no clicado
+    this.classList.add('ativo');                     // adiciona só no clicado 
   });
 });
 

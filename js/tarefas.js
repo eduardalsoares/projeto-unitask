@@ -1,31 +1,31 @@
-const form = document.getElementById('form-tarefa');
-const listaTarefas = document.getElementById('lista-tarefas');
+const form = document.getElementById('form-tarefa');// formulario de cadastro
+const listaTarefas = document.getElementById('lista-tarefas');//onde as tarefas são exibidas, pegando o elemento do HTML para manipular depois
 
 // Mapeamento visual dos status para bater com o formato do HTML
-const statusTexto = {
+const statusTexto = {//exibir o status, const para mapear o status para o texto exibido
     'afazer': 'A FAZER',
     'andamento': 'EM ANDAMENTO',
     'feito': 'FEITO'
 };
 
 // Elementos do Pop-up (Modal) de Edição
-const modalEditar = document.getElementById('modal-editar');
+const modalEditar = document.getElementById('modal-editar');//modal para edição das tarefas
 const editarId = document.getElementById('editar-id');
 const editarTitulo = document.getElementById('editar-titulo');
 const editarDescricao = document.getElementById('editar-descricao');
 const editarStatus = document.getElementById('editar-status');
 const btnSalvarEdicao = document.getElementById('btn-salvar-edicao');
-const btnFecharModal = document.getElementById('btn-fechar-modal');
+const btnFecharModal = document.getElementById('btn-fechar-modal');//botão para fechar o modal de edição
 
 
 // FUNÇÃO PARA CARREGAR DO LOCALSTORAGE E EXIBIR
-function carregarTarefas() {
+function carregarTarefas() {//função para carregar as tarefas do localStorage e exibir na tela
     listaTarefas.innerHTML = ''; // Limpa a lista para não duplicar
 
-    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];//lê as tarefas do localStorage, se não houver, inicia com um array vazio, Json.parse converte de volta para objeto JavaScript
 
-    tarefas.forEach(tarefa => {
-        const novaTarefa = document.createElement('li');
+    tarefas.forEach(tarefa => { //para cada tarefa, cria um elemento li para exibir na tela
+        const novaTarefa = document.createElement('li');//cria um elemento li para cada tarefa
         novaTarefa.classList.add('task-item'); // Mantém a classe CSS do projeto
 
         // Regra de cores de borda por prioridade
@@ -37,7 +37,7 @@ function carregarTarefas() {
         novaTarefa.innerHTML = `
             <div style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1;">
                 <strong style="color: #063A5D;">${tarefa.titulo}</strong>
-                <small style="color: #4a7a8a;">${tarefa.descricao}</small>
+                <small style="color: #4a7a8a;">${tarefa.descricao}</small> 
                 <span style="font-size: 0.8rem; color: #4a7a8a;">📅 Prazo: ${tarefa.prazo}</span>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
@@ -48,23 +48,23 @@ function carregarTarefas() {
             </div>
         `;
 
-        listaTarefas.appendChild(novaTarefa);
+        listaTarefas.appendChild(novaTarefa);//adiciona a nova tarefa à lista exibida na tela
     });
 }
 
 // FORMULÁRIO DE CADASTRO (Criação de novas tarefas)
 
-form.addEventListener('submit', function(evento) {
-    evento.preventDefault(); 
+form.addEventListener('submit', function(evento) {//formulário de cadastro, ao submeter, executa a função para criar uma nova tarefa
+    evento.preventDefault(); // Evita o comportamento padrão de recarregar a página, permitindo que a tarefa seja salva e exibida sem perder os dados já existentes
 
-    const titulo = document.getElementById('titulo').value;
+    const titulo = document.getElementById('titulo').value;//pega o valor do título da tarefa a partir do input do formulário
     const descricao = document.getElementById('descricao').value;
     const prazo = document.getElementById('prazo').value;
     const prioridade = document.getElementById('prioridade').value;
     const status = document.getElementById('status').value;
  
-    const tarefa = {
-        id: Date.now(),
+    const tarefa = {//cria um objeto tarefa com os dados do formulário
+        id: Date.now(),//data atual e o now para gerar um Id unico
         titulo,
         descricao,
         prazo,
@@ -72,12 +72,12 @@ form.addEventListener('submit', function(evento) {
         status
     };
 
-    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-    tarefas.push(tarefa);
-    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];//let para permitir reatribuição, lê as tarefas do localStorage, se não houver, inicia com um array vazio
+    tarefas.push(tarefa);//push para adicionar a nova tarefa ao array de tarefas
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));//salva o array atualizado de tarefas no localStorage, Json.stringify converte o array para uma string para armazenamento
 
-    carregarTarefas();
-    form.reset(); 
+    carregarTarefas();//chama a função recarregar a lista de tarefas
+    form.reset(); // Limpa o formulário após o cadastro
 });
 
 
@@ -85,14 +85,14 @@ form.addEventListener('submit', function(evento) {
 
 
 // Abre o Pop-up e preenche com os dados armazenados
-window.abrirPopUpEdicao = function(id) {
+window.abrirPopUpEdicao = function(id) {//função para abrir o pop-up de edição, recebe o id da tarefa a ser editada
     id = Number(id); // Garante que o ID seja um número para comparação
 
     let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-    const tarefaEncontrada = tarefas.find(t => t.id === id);
+    const tarefaEncontrada = tarefas.find(t => t.id === id);//procura a tarefa correspondente ao id
 
-    if (tarefaEncontrada) {
-        editarId.value = tarefaEncontrada.id;
+    if (tarefaEncontrada) {//se a tarefa for encontrada
+        editarId.value = tarefaEncontrada.id;//preenche o campo id de edição
         editarTitulo.value = tarefaEncontrada.titulo;
         editarDescricao.value = tarefaEncontrada.descricao;
         editarStatus.value = tarefaEncontrada.status;
@@ -102,12 +102,12 @@ window.abrirPopUpEdicao = function(id) {
 }
 
 // Salva as alterações feitas no Pop-up
-btnSalvarEdicao.addEventListener('click', () => {
-    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-    const idParaEditar = Number(editarId.value);
+btnSalvarEdicao.addEventListener('click', () => {//botao de salvar e addEventListener para salvar as alterações feitas no pop-up de edição
+    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];//lê as tarefas do localStorage, se não houver, inicia com um array vazio
+    const idParaEditar = Number(editarId.value);//pega o id da tarefa a ser editada a partir do campo de edição
 
-    tarefas = tarefas.map(tarefa => {
-        if (tarefa.id === idParaEditar) {
+    tarefas = tarefas.map(tarefa => {//map para criar um novo array de tarefas, atualizando apenas a tarefa que foi editada
+        if (tarefa.id === idParaEditar) {//se o id da tarefa for igual ao id para editar, atualiza os dados da tarefa com os valores do pop-up de edição
             tarefa.titulo = editarTitulo.value;
             tarefa.descricao = editarDescricao.value;
             tarefa.status = editarStatus.value;
