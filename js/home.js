@@ -52,3 +52,12 @@ document.getElementById('btnCalendario').addEventListener('click', () => {
 document.getElementById('btnDashboard').addEventListener('click', () => {
     window.location.href = './dashboard.html';
 });
+
+document.getElementById('btnPerfil').addEventListener('click', () => {
+    window.location.href = './perfil.html';
+})
+
+document.getElementById('btnSair').addEventListener('click', () => {
+    localStorage.removeItem('usuarioLogado'); // apaga só a sessão
+    window.location.href = './index.html';    // dadosCadastro continua salvo
+});

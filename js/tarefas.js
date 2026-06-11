@@ -86,6 +86,8 @@ form.addEventListener('submit', function(evento) {
 
 // Abre o Pop-up e preenche com os dados armazenados
 window.abrirPopUpEdicao = function(id) {
+    id = Number(id); // Garante que o ID seja um número para comparação
+
     let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
     const tarefaEncontrada = tarefas.find(t => t.id === id);
 
@@ -125,3 +127,26 @@ btnFecharModal.addEventListener('click', () => {
 
 // Inicializa a lista assim que a página abre
 document.addEventListener('DOMContentLoaded', carregarTarefas);
+
+// Navegação entre páginas
+
+document.getElementById('btnHoje').addEventListener('click', () => {
+    window.location.href = './home.html';
+});
+
+document.getElementById('btnCalendario').addEventListener('click', () => {
+    window.location.href = './calendario.html';
+});
+
+document.getElementById('btnDashboard').addEventListener('click', () => {
+    window.location.href = './dashboard.html';
+});
+
+document.getElementById('btnPerfil').addEventListener('click', () => {
+    window.location.href = './perfil.html';
+})
+
+document.getElementById('btnSair').addEventListener('click', () => {
+    localStorage.removeItem('usuarioLogado'); // apaga só a sessão
+    window.location.href = './index.html';    // dadosCadastro continua salvo
+});
