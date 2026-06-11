@@ -1,25 +1,191 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unistas - Perfil</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Unitask | Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/logo.svg">
+    <link rel="stylesheet" href="../css/perfil.css">
 </head>
-<body>
-    <main class="container">
-        <section class="card-perfil">
-            <h1>Perfil do usuário</h1>
 
-            <div class="info-usuario">
-                <p><strong>Nome:</strong><span id="nome-perfil">Rakel</span></p>
-                <p><strong>Email:</strong>rakel@email.com</p>
-                <p><strong>Curso</strong>Sistemas para Internet</p>
-            
-            </div>
-            <a href="index.html">Voltar para login</a>
+<body>
+  <div class="layout">
+
+    <aside id="menu-lateral">
+      <div class="menu-titulo">
+        <img src="../assets/icons/logo.png" alt="Unitask Logo">
+        <h1>Unitask</h1>
+      </div>
+      <div class="menu-btn">
+        <button id="btnHoje">Hoje</button>
+        <button id="btnTarefas">Tarefas</button>
+        <button id="btnCalendario">Calendário</button>
+        <button id="btnDashboard">Dashboard</button>
+        <button id="btnPerfil">Perfil</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <span>Meu Perfil</span>
+        <div>
+          <button id="btnSair">Sair</button>
+        </div>
+      </header>
+
+      <div class="pagina-perfil">
+        <section class="titulo-secao">
+          <h1>Meu Perfil</h1>
+          <p>Gerencie suas informações pessoais</p>
         </section>
+
+        <section class="perfil-grid">
+
+          <div class="card">
+
+            <div class="foto-container">
+              <img
+                id="fotoPerfil"
+                src="../assets/icons/logo.png"
+                alt="Foto Perfil"
+                class="foto-perfil"
+              >
+
+              <input
+                type="file"
+                id="inputFoto"
+                accept="image/*"
+                hidden
+              >
+
+              <button
+                id="btnTrocarFoto"
+                class="btn-azul"
+                type="button"
+              >
+                Alterar Foto
+              </button>
+            </div>
+
+            <form id="formPerfil">
+
+              <div class="campo">
+                <label>Nome Completo</label>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Digite seu nome"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label>Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite seu email"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label>Curso</label>
+                <input
+                  type="text"
+                  id="curso"
+                  placeholder="ADS, Engenharia..."
+                >
+              </div>
+
+              <div class="campo">
+                <label>Instituição</label>
+                <input
+                  type="text"
+                  id="instituicao"
+                  placeholder="Faculdade"
+                >
+              </div>
+
+              <div class="campo">
+                <label>Telefone</label>
+                <input
+                  type="tel"
+                  id="telefone"
+                  placeholder="(00) 00000-0000"
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="btn-salvar"
+              >
+                Salvar Alterações
+              </button>
+
+            </form>
+
+          </div>
+
+          <div class="coluna-direita">
+
+            <div class="card">
+              <h2>Perguntas Frequentes</h2>
+
+              <details>
+                <summary>Como alterar minha foto?</summary>
+                <p>Clique em Alterar Foto e selecione uma imagem do seu dispositivo.</p>
+              </details>
+
+              <details>
+                <summary>Como criar tarefas?</summary>
+                <p>Vá para Tarefas e clique em Nova Tarefa.</p>
+              </details>
+
+              <details>
+                <summary>Posso editar tarefas?</summary>
+                <p>Sim. Use o ícone de edição nas tarefas.</p>
+              </details>
+
+              <details>
+                <summary>Onde ficam salvas minhas informações?</summary>
+                <p>Todas as suas informações são salvas no navegador.</p>
+              </details>
+
+            </div>
+
+            <div class="card">
+              <h2>Entre em Contato</h2>
+              <p>Está com dúvidas ou sugestões?</p>
+
+              <div class="contato">
+                <span>📧 suporte@unitask.com</span>
+                <span>📱 (83) 99999-9999</span>
+              </div>
+
+              <textarea
+                id="mensagem"
+                placeholder="Digite sua mensagem..."
+              ></textarea>
+
+              <button id="btnEnviar" class="btn-azul">
+                Enviar Mensagem
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+      </div>
+
     </main>
-    
+
+  </div>
+
+  <script src="../js/perfil.js"></script>
 </body>
 </html>
